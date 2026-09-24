@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samridhi Papneja — Product Manager</title>
+<meta name="description" content="Product management portfolio of Samridhi Papneja — case studies in Porter, Zomato, Twitter/X, Uber, Amazon and Myntra.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#151a2e;
+    --paper:#f3f2ec;
+    --paper-2:#eae8df;
+    --teal:#2f6f5e;
+    --teal-deep:#1f4d40;
+    --gold:#b8892b;
+    --line:#d8d5c8;
+    --muted:#5c5f6b;
+    --white:#fffefb;
+    --radius:2px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', -apple-system, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', Georgia, serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  /* ---- Nav ---- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(243,242,236,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:var(--maxw); margin:0 auto; padding:18px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-name{font-family:'Fraunces',serif; font-size:19px; font-weight:600;}
+  .nav-links{display:flex; gap:28px; list-style:none; margin:0; padding:0; font-size:14.5px;}
+  .nav-links a{text-decoration:none; color:var(--muted); border-bottom:1px solid transparent; padding-bottom:2px; transition:color .15s, border-color .15s;}
+  .nav-links a:hover{color:var(--teal-deep); border-color:var(--teal-deep);}
+  .nav-toggle{display:none; background:none; border:1px solid var(--line); border-radius:var(--radius); padding:6px 10px; font-size:20px; cursor:pointer;}
+
+  /* ---- Hero ---- */
+  .hero{padding:96px 0 72px; border-bottom:1px solid var(--line);}
+  .hero .kicker{color:var(--teal-deep); font-size:14px; margin-bottom:18px; font-weight:500;}
+  .hero h1{font-size:clamp(40px,6vw,66px); line-height:1.05; max-width:15ch;}
+  .hero h1 em{font-style:italic; color:var(--teal-deep);}
+  .hero p.lede{max-width:56ch; font-size:19px; color:var(--muted); margin-top:22px;}
+  .hero .stats{display:flex; gap:48px; margin-top:48px; flex-wrap:wrap;}
+  .stat .n{font-family:'Fraunces',serif; font-size:34px; color:var(--teal-deep);}
+  .stat .l{font-size:13.5px; color:var(--muted); max-width:16ch; margin-top:4px;}
+  .hero .ctas{margin-top:44px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 24px; border-radius:var(--radius);
+    font-size:14.5px; font-weight:500; text-decoration:none;
+    border:1px solid var(--ink); transition:background .15s, color .15s;
+  }
+  .btn.primary{background:var(--ink); color:var(--white);}
+  .btn.primary:hover{background:var(--teal-deep); border-color:var(--teal-deep);}
+  .btn.ghost{background:transparent; color:var(--ink);}
+  .btn.ghost:hover{background:var(--ink); color:var(--white);}
+
+  section{padding:88px 0; border-bottom:1px solid var(--line);}
+  .section-head{display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:44px; flex-wrap:wrap;}
+  .section-head .num{font-family:'IBM Plex Mono',monospace; color:var(--gold); font-size:14px; margin-bottom:10px; display:block;}
+  .section-head h2{font-size:clamp(28px,3.4vw,38px);}
+  .section-head p{color:var(--muted); max-width:44ch; margin-top:10px;}
+
+  /* ---- About / skills ---- */
+  .about-grid{display:grid; grid-template-columns:1.1fr 1fr; gap:64px;}
+  .about-grid p{font-size:17px; color:#333649;}
+  .about-grid p + p{margin-top:16px;}
+  .skill-block + .skill-block{margin-top:26px;}
+  .skill-block h4{font-size:14px; text-transform:none; color:var(--teal-deep); margin-bottom:10px; font-family:'IBM Plex Sans',sans-serif; font-weight:600;}
+  .pills{display:flex; flex-wrap:wrap; gap:8px;}
+  .pill{
+    font-size:13px; padding:6px 12px; border:1px solid var(--line);
+    border-radius:20px; background:var(--white); color:var(--ink);
+  }
+
+  /* ---- Experience ---- */
+  .xp-row{display:grid; grid-template-columns:220px 1fr; gap:32px; padding:28px 0; border-top:1px solid var(--line);}
+  .xp-row:last-child{border-bottom:none;}
+  .xp-when{color:var(--muted); font-size:14px; font-family:'IBM Plex Mono',monospace;}
+  .xp-role{font-size:20px; font-family:'Fraunces',serif; margin-bottom:4px;}
+  .xp-org{color:var(--teal-deep); font-size:15px; margin-bottom:14px;}
+  .xp-row ul{margin:0; padding-left:18px; color:#333649;}
+  .xp-row li{margin-bottom:8px;}
+
+  /* ---- Featured case study (Porter) ---- */
+  .feature{
+    background:var(--ink); color:var(--paper);
+    border-radius:6px; padding:56px; position:relative; overflow:hidden;
+  }
+  .feature .tag{display:inline-block; font-size:13px; color:var(--gold); border:1px solid rgba(184,137,43,.5); padding:5px 12px; border-radius:20px; margin-bottom:22px;}
+  .feature h3{font-size:clamp(26px,3.6vw,36px); color:var(--white); max-width:20ch;}
+  .feature .sub{color:#b9bccb; margin-top:14px; max-width:60ch; font-size:16.5px;}
+  .feature-metrics{display:flex; gap:40px; margin:36px 0; flex-wrap:wrap;}
+  .fm .n{font-family:'Fraunces',serif; font-size:30px; color:var(--white);}
+  .fm .l{font-size:13px; color:#9a9db0; margin-top:4px; max-width:18ch;}
+  .feature-links{display:flex; gap:14px; flex-wrap:wrap; margin-top:12px;}
+  .feature .btn.primary{background:var(--gold); border-color:var(--gold); color:var(--ink);}
+  .feature .btn.primary:hover{background:#d3a03d; border-color:#d3a03d;}
+  .feature .btn.ghost{border-color:#4a4e63; color:var(--paper);}
+  .feature .btn.ghost:hover{background:var(--paper); color:var(--ink);}
+
+  /* ---- Case study grid ---- */
+  .cs-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .cs-card{
+    background:var(--white); border:1px solid var(--line); border-radius:4px;
+    padding:32px; display:flex; flex-direction:column; height:100%;
+    transition:border-color .15s, transform .15s;
+  }
+  .cs-card:hover{border-color:var(--teal-deep); transform:translateY(-2px);}
+  .cs-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:16px;}
+  .cs-index{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--gold);}
+  .cs-metric{font-size:12.5px; background:var(--paper-2); padding:4px 10px; border-radius:12px; color:var(--teal-deep); font-weight:500; white-space:nowrap;}
+  .cs-card h3{font-size:21px; margin-bottom:10px;}
+  .cs-card p{color:var(--muted); font-size:15px; flex-grow:1;}
+  .cs-tags{display:flex; flex-wrap:wrap; gap:6px; margin:16px 0;}
+  .cs-tags span{font-size:12px; color:var(--muted); background:var(--paper); padding:3px 9px; border-radius:12px;}
+  .cs-card .cs-link{
+    margin-top:8px; font-size:14px; font-weight:500; color:var(--teal-deep);
+    text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+  }
+  .cs-card .cs-link:hover{text-decoration:underline;}
+
+  /* ---- Technical projects ---- */
+  .tech-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .tech-card{border-left:2px solid var(--teal); padding-left:20px;}
+  .tech-card h4{font-size:17px; margin-bottom:8px; font-family:'Fraunces',serif; font-weight:500;}
+  .tech-card p{color:var(--muted); font-size:14.5px;}
+  .tech-card .stack{margin-top:10px; font-size:12.5px; font-family:'IBM Plex Mono',monospace; color:var(--gold);}
+
+  /* ---- Education / certs ---- */
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px;}
+  .edu-item + .edu-item{margin-top:22px;}
+  .edu-item .deg{font-size:18px; font-family:'Fraunces',serif;}
+  .edu-item .meta{color:var(--muted); font-size:14px; margin-top:3px;}
+  .cert-list{list-style:none; margin:0; padding:0;}
+  .cert-list li{padding:12px 0; border-top:1px solid var(--line); font-size:15px; display:flex; justify-content:space-between; gap:16px;}
+  .cert-list li:last-child{border-bottom:1px solid var(--line);}
+  .cert-list span.yr{color:var(--muted); font-size:13px; white-space:nowrap; font-family:'IBM Plex Mono',monospace;}
+
+  /* ---- Footer ---- */
+  footer{padding:72px 0 48px;}
+  .footer-grid{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:32px;}
+  footer h2{font-size:clamp(30px,4vw,44px); max-width:14ch;}
+  .footer-links{display:flex; flex-direction:column; gap:10px; align-items:flex-end;}
+  .footer-links a{text-decoration:none; font-size:15px; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:2px;}
+  .footer-links a:hover{border-color:var(--ink);}
+  .foot-note{margin-top:56px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed; top:64px; left:0; right:0; background:var(--paper);
+      flex-direction:column; padding:24px 32px; border-bottom:1px solid var(--line);
+      display:none; gap:18px;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+    .about-grid, .edu-grid{grid-template-columns:1fr; gap:40px;}
+    .cs-grid{grid-template-columns:1fr;}
+    .tech-grid{grid-template-columns:1fr; gap:32px;}
+    .feature{padding:32px 22px;}
+    .footer-grid{flex-direction:column; align-items:flex-start;}
+    .footer-links{align-items:flex-start;}
+    section{padding:64px 0;}
+    .hero{padding:56px 0 48px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav>
+    <span class="nav-name">Samridhi Papneja</span>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Case studies</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#technical">Technical projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero wrap" style="border-bottom:1px solid var(--line);">
+  <div class="kicker mono">Product Manager · Bengaluru-first mindset, India-wide curiosity</div>
+  <h1>I turn messy user problems into <em>shipped</em> product decisions.</h1>
+  <p class="lede">Aspiring PM with a systems-engineering background — I run research, frame the problem, prioritize with RICE, and write the PRD, then go build the thing myself when nobody's around to hand it to me.</p>
+  <div class="stats">
+    <div class="stat"><div class="n mono">7</div><div class="l">End-to-end product case studies</div></div>
+    <div class="stat"><div class="n mono">41→58%</div><div class="l">Porter first-trip conversion target</div></div>
+    <div class="stat"><div class="n mono">9.30</div><div class="l">CGPA, B.E. Computer Science</div></div>
+  </div>
+  <div class="ctas">
+    <a class="btn primary" href="#work">View case studies</a>
+    <a class="btn ghost" href="assets/resume/Samridhi_Papneja_Resume.pdf" target="_blank">Download résumé</a>
+    <a class="btn ghost" href="mailto:samridhipapneja06@gmail.com">Say hello</a>
+  </div>
+</section>
+
+<section class="wrap" id="about">
+  <div class="section-head">
+    <div>
+      <span class="num">01</span>
+      <h2>About</h2>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>I'm a Product Manager in training with an unusual head start: two years writing the code that PMs usually just hand off. I spent that time at Accenture on Hilton's property engagement platform, turning messy stakeholder asks into scoped requirements and watching which fixes actually moved reliability for hotel staff on the ground.</p>
+      <p>Since then I've run seven independent case studies — Porter, Zomato, Twitter/X, Uber, Amazon and Myntra — each one taken from a real observed problem through research, RICE prioritization, a PRD, and (for my flagship project) a working prototype. I like problems with a number attached: a conversion rate, a drop-off point, a retention curve I can move.</p>
+    </div>
+    <div>
+      <div class="skill-block">
+        <h4>Product</h4>
+        <div class="pills">
+          <span class="pill">User research</span><span class="pill">PRD writing</span>
+          <span class="pill">TAM / SAM / SOM</span><span class="pill">Go-to-market strategy</span>
+          <span class="pill">AARRR funnel analysis</span><span class="pill">RICE prioritization</span>
+          <span class="pill">Metric ladders</span><span class="pill">Jobs-to-be-done</span>
+          <span class="pill">Roadmapping</span><span class="pill">Stakeholder management</span>
+          <span class="pill">Competitive analysis</span><span class="pill">Agile / Scrum</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h4>Technical</h4>
+        <div class="pills">
+          <span class="pill">Apex</span><span class="pill">Python</span><span class="pill">React</span>
+          <span class="pill">MongoDB</span><span class="pill">SAP S/4HANA FICO</span>
+          <span class="pill">Salesforce Admin & Dev</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <h4>Tools</h4>
+        <div class="pills">
+          <span class="pill">Figma</span><span class="pill">JIRA</span><span class="pill">Excel</span>
+          <span class="pill">SQL / SOQL</span><span class="pill">n8n</span><span class="pill">Lovable</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="experience">
+  <div class="section-head">
+    <div>
+      <span class="num">02</span>
+      <h2>Experience</h2>
+    </div>
+  </div>
+  <div class="xp-row">
+    <div class="xp-when">Oct 2024 – Mar 2026</div>
+    <div>
+      <div class="xp-role">Associate Software Engineer</div>
+      <div class="xp-org">Accenture — Hilton Property Engagement Platform, Gurugram</div>
+      <ul>
+        <li>Worked with cross-functional engineering, QA, and business stakeholders to understand real-world usage issues on a platform used across Hilton properties, translating them into clear, scoped requirements.</li>
+        <li>Evaluated recurring system issues to identify root causes and business impact, then prioritized and designed fixes that measurably improved platform reliability and day-to-day experience for hotel staff.</li>
+        <li>Partnered with stakeholders to document requirements and communicate trade-offs, keeping enhancements aligned with business priorities and delivery timelines.</li>
+        <li>Contributed to sprint planning and backlog grooming — hands-on exposure to prioritization frameworks, requirement gathering, and stakeholder communication.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="work">
+  <div class="section-head">
+    <div>
+      <span class="num">03</span>
+      <h2>Case studies</h2>
+      <p>Seven independent product exercises, each run start to finish: research, problem framing, prioritization, and a recommendation.</p>
+    </div>
+  </div>
+
+  <!-- Featured: Porter -->
+  <div class="feature">
+    <span class="tag mono">Flagship case study · Capstone</span>
+    <h3>Porter — building first-time goods transport confidence</h3>
+    <p class="sub">First-time customers reach Porter's vehicle-selection screen knowing what they need to move, but can't confidently answer "which vehicle fits?" or "will the price hold?" — I diagnosed the 59% drop-off, prioritized two RICE-scored solution bundles, and shipped a working prototype.</p>
+    <div class="feature-metrics">
+      <div class="fm"><div class="n mono">41% → 58%</div><div class="l">7-day first-trip conversion target</div></div>
+      <div class="fm"><div class="n mono">+₹15.3 Cr</div><div class="l">Projected annual revenue impact</div></div>
+      <div class="fm"><div class="n mono">6</div><div class="l">Solution ideas scored with RICE</div></div>
+    </div>
+    <div class="feature-links">
+      <a class="btn primary" href="assets/case-studies/01-porter-first-trip-confidence.pdf" target="_blank">Read the full case study</a>
+      <a class="btn ghost" href="https://porter-first-trip-confidence-prototype-1.replit.app" target="_blank">Try the prototype</a>
+      <a class="btn ghost" href="https://drive.google.com/file/d/1fLbE6s5fB9iF5byfKzcjiAY7xbx8ck2J/view?usp=drivesdk" target="_blank">Watch the walkthrough</a>
+    </div>
+  </div>
+
+  <div style="height:32px"></div>
+
+  <div class="cs-grid">
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">02</span>
+        <span class="cs-metric">Checkout −36% drop</span>
+      </div>
+      <h3>Zomato — PM strategy deep-dive</h3>
+      <p>Mapped a 7-stage ordering funnel end to end (9% overall conversion), defined 5 user cohorts with D30 retention benchmarks, and built 9 metric ladders to prioritize fixes by impact vs. effort.</p>
+      <div class="cs-tags"><span>Funnel analysis</span><span>Cohort retention</span><span>Metric ladders</span></div>
+      <a class="cs-link" href="assets/case-studies/02-zomato-pm-strategy.pdf" target="_blank">Read the case study →</a>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">03</span>
+        <span class="cs-metric">RICE 30 / 15 / 14</span>
+      </div>
+      <h3>Twitter / X — AARRR growth funnel analysis</h3>
+      <p>Mapped the full AARRR funnel for first-time users and found a broken contacts-sync flow quietly killing activation. Proposed three epics — Social Graph Onboarding, New User Home, Smart DM Discovery — ranked with RICE.</p>
+      <div class="cs-tags"><span>AARRR</span><span>Growth epics</span><span>RICE</span></div>
+      <a class="cs-link" href="assets/case-studies/03-twitter-x-aarrr-funnel.pdf" target="_blank">Read the case study →</a>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">04</span>
+        <span class="cs-metric">6+ interviews</span>
+      </div>
+      <h3>Uber — "Find My Ride" feature</h3>
+      <p>Identified high pickup-coordination friction in crowded environments like airports and malls through user interviews, sized the opportunity with TAM/SAM/SOM, and proposed Smart Pickup Spots with a Pickup Confidence Score.</p>
+      <div class="cs-tags"><span>UX research</span><span>TAM/SAM/SOM</span><span>PRD</span></div>
+      <a class="cs-link" href="assets/case-studies/04-uber-find-my-ride.pdf" target="_blank">Read the case study →</a>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">05</span>
+        <span class="cs-metric">8 issues mapped</span>
+      </div>
+      <h3>Amazon — auditing the checkout flow</h3>
+      <p>A structured heuristic evaluation of Amazon's cart-to-order flow against Nielsen's 10 heuristics and core UX laws — Hick's, Fitts's, and Jakob's — with a severity-rated fix for each issue found.</p>
+      <div class="cs-tags"><span>Heuristic evaluation</span><span>UX laws</span></div>
+      <a class="cs-link" href="assets/case-studies/05-amazon-checkout-ux-audit.pdf" target="_blank">Read the case study →</a>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">06</span>
+        <span class="cs-metric">2 user interviews</span>
+      </div>
+      <h3>Myntra — UX analysis through a user's lens</h3>
+      <p>Walked the full shop-to-checkout journey myself, then validated findings with real users. Surfaced an inaccurate visual search and a WhatsApp link-sharing gap, alongside what's already working — instant refunds and pricing trust.</p>
+      <div class="cs-tags"><span>Feature audit</span><span>User interviews</span></div>
+      <a class="cs-link" href="assets/case-studies/06-myntra-ux-analysis.pdf" target="_blank">Read the case study →</a>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-top">
+        <span class="cs-index mono">07</span>
+        <span class="cs-metric">B2B · 3-year plan</span>
+      </div>
+      <h3>Expense management — B2B product strategy</h3>
+      <p>A land-and-expand strategy for a B2B expense app, starting with frictionless receipt capture for employees and expanding into approval workflows, virtual cards, and predictive analytics for finance teams.</p>
+      <div class="cs-tags"><span>B2B strategy</span><span>Land & expand</span></div>
+      <a class="cs-link" href="assets/case-studies/07-b2b-expense-strategy.pdf" target="_blank">Read the case study →</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="technical">
+  <div class="section-head">
+    <div>
+      <span class="num">04</span>
+      <h2>Technical projects</h2>
+      <p>Before the PM case studies, I was the one building the thing.</p>
+    </div>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h4>Expense Manager</h4>
+      <p>A fully functional expense-tracking application generating analytical income and expense reports for users.</p>
+      <div class="stack">Apex · SOQL · Flows · Data security</div>
+    </div>
+    <div class="tech-card">
+      <h4>Invoice Manager</h4>
+      <p>Automated end-to-end invoice management workflows, cutting manual processing effort for finance teams.</p>
+      <div class="stack">LWC · Apex triggers · Approval processes</div>
+    </div>
+    <div class="tech-card">
+      <h4>Happy Paws</h4>
+      <p>A secure e-commerce platform for dog owners with reliable, role-based data access.</p>
+      <div class="stack">React.js · MongoDB · Auth & authorization</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="education">
+  <div class="section-head">
+    <div>
+      <span class="num">05</span>
+      <h2>Education &amp; certifications</h2>
+    </div>
+  </div>
+  <div class="edu-grid">
+    <div>
+      <div class="edu-item">
+        <div class="deg">B.E. Computer Science</div>
+        <div class="meta">Chitkara University · 2024 · CGPA 9.30</div>
+      </div>
+      <div class="edu-item">
+        <div class="deg">Senior Secondary Education</div>
+        <div class="meta">PKR Jain Vatika Senior Secondary School · 2020 · 81%</div>
+      </div>
+    </div>
+    <div>
+      <ul class="cert-list">
+        <li>AI-First Product Management — Airtribe <span class="yr">2026</span></li>
+        <li>Certified Salesforce Associate <span class="yr">2024</span></li>
+        <li>AWS Academy — Introduction to Cloud <span class="yr">2022</span></li>
+        <li>Python OOPs — Coding Ninjas <span class="yr">2020</span></li>
+        <li>Introduction to Web Technologies — Coding Ninjas <span class="yr">2020</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap" id="contact">
+  <div class="footer-grid">
+    <h2>Let's talk about what I should build next.</h2>
+    <div class="footer-links">
+      <a href="mailto:samridhipapneja06@gmail.com">samridhipapneja06@gmail.com</a>
+      <a href="tel:+918168025042">+91 81680 25042</a>
+      <a href="#" id="linkedinLink">LinkedIn — add your profile URL</a>
+      <a href="assets/resume/Samridhi_Papneja_Resume.pdf" target="_blank">Download résumé (PDF)</a>
+    </div>
+  </div>
+  <div class="foot-note">
+    <span>Samridhi Papneja — Product Manager</span>
+    <span>Built with care, one case study at a time.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('navLinks').classList.remove('open'); });
+  });
+</script>
+</body>
+</html>
